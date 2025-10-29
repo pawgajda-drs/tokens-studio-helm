@@ -39,6 +39,6 @@ entries:
     sources:
     - https://github.com/target/goalert
     urls:
-    - goalert-0.0.6.tgz
+    - https://github.com/pawgajda-drs/tokens-studio-helm/releases/download/goalert-0.0.6/goalert-0.0.6.tgz
     version: 0.0.6
 generated: "2025-10-29T20:26:24.275907+09:00"
