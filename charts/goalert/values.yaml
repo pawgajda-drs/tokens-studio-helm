@@ -172,3 +172,11 @@ securityContext:
 ## @param replicaCount Number of replica pods to run
 ##
 replicaCount: 1
+
+## @param Extra Environment Variables to set for the GoAlert Pod
+##
+extraEnv: []
+
+## @param Use Secrets and ConfigMaps to set Extra Environment Variables for the GoAlert Pod
+##
+extraEnvFrom: []

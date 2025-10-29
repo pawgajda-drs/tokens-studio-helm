@@ -44,6 +44,16 @@ spec:
             - name: GOALERT_DATA_ENCRYPTION_KEY
               value: {{ .Values.goalert.environment.GOALERT_DATA_ENCRYPTION_KEY | quote }}
             {{- end }}
+            {{- if and (.Values.extraEnv) (gt (len .Values.extraEnv) 0) }}
+            {{- .Values.extraEnv | toYaml | nindent 12 }}
+            {{- end }}
+          {{- if and (.Values.extraEnvFrom) (gt (len .Values.extraEnvFrom) 0) }}
+          envFrom:
+            {{- range .Values.extraEnvFrom }}
+            - {{ .type }}:
+                name: {{ .name }}
+            {{- end }}
+          {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
