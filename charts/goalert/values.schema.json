@@ -260,6 +260,16 @@
             "type": "number",
             "description": "Number of replica pods to run",
             "default": 1
+        },
+        "extraEnv": {
+            "type": "array",
+            "description": "Extra Environment Variables to set for the GoAlert Pod",
+            "default": []
+        },
+        "extraEnvFrom": {
+            "type": "array",
+            "description": "Use Secrets and ConfigMaps to set Extra Environment Variables for the GoAlert Pod",
+            "default": []
         }
     }
 }
